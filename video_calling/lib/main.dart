@@ -58,9 +58,9 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  String channelName = "ali";
+  String channelName = "alii";
   String token =
-      '007eJxTYDg/0VA6SW7+7UgrZvsysSPMt/a3nHjl+O12xRcJ7mctIZcUGMxTU5JMLJKSzQxMLEwSLZMtk9JMLFNSUpNTLZITzYwMfbq2JTcEMjJs23GUmZEBAkF8ZgbHnEwGBgBY9yCD';
+      '007eJxTYLBhCj+s5OarkOnU1lkvKrevseJr6awprmw/p/eveiXQuVOBwTw1JcnEIinZzMDEwiTRMtkyKc3EMiUlNTnVIjnRzMiwdO625IZARob99eFMjAwQCOKzMCTmZGYyMAAA58YfFA==';
 
   int uid = 0; // uid of the local user
 
