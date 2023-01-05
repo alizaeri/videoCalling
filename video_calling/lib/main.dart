@@ -59,7 +59,8 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   String channelName = "ali";
-  late String token;
+  String token =
+      '007eJxTYDg/0VA6SW7+7UgrZvsysSPMt/a3nHjl+O12xRcJ7mctIZcUGMxTU5JMLJKSzQxMLEwSLZMtk9JMLFNSUpNTLZITzYwMfbq2JTcEMjJs23GUmZEBAkF8ZgbHnEwGBgBY9yCD';
 
   int uid = 0; // uid of the local user
 
@@ -86,24 +87,24 @@ class _MyHomePageState extends State<MyHomePage> {
     setupVideoSDKEngine();
   }
 
-  Future<void> getToken() async {
-    final response = await http.get(
-      Uri.parse(
-          baseUrl + 'rtc/' + channelName + '/publisher/uid/' + uid.toString()
-          // To add expiry time uncomment the below given line with the time in seconds
-          // + '?expiry=45'
-          ),
-    );
+  // Future<void> getToken() async {
+  //   final response = await http.get(
+  //     Uri.parse(
+  //         baseUrl + 'rtc/' + channelName + '/publisher/uid/' + uid.toString()
+  //         // To add expiry time uncomment the below given line with the time in seconds
+  //         // + '?expiry=45'
+  //         ),
+  //   );
 
-    if (response.statusCode == 200) {
-      setState(() {
-        token = response.body;
-        token = jsonDecode(token)['rtcToken'];
-      });
-    } else {
-      print('Failed to fetch the token');
-    }
-  }
+  //   if (response.statusCode == 200) {
+  //     setState(() {
+  //       token = response.body;
+  //       token = jsonDecode(token)['rtcToken'];
+  //     });
+  //   } else {
+  //     print('Failed to fetch the token');
+  //   }
+  // }
 
   void join() async {
     await agoraEngine.startPreview();
@@ -113,7 +114,7 @@ class _MyHomePageState extends State<MyHomePage> {
       clientRoleType: ClientRoleType.clientRoleBroadcaster,
       channelProfile: ChannelProfileType.channelProfileCommunication,
     );
-    await getToken();
+    // await getToken();
 
     await agoraEngine.joinChannel(
       token: token,
